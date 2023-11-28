@@ -1,0 +1,299 @@
+/* Import sources custom */
+@font-face {
+    font-family: "yanone";
+    src: url("fonts/yanone.ttf");
+}
+
+@font-face {
+    font-family: "finger";
+    src: url(fonts/finger.ttf);
+}
+
+@font-face {
+    font-family: "titilium";
+    src: url(fonts/titilium.ttf);
+}
+
+/*Generales*/
+
+*{
+    margin: 0px;
+    padding: 0px;
+}
+
+body{
+    font-family: "yanone";
+    font-size: 20px;
+    background: url(../img/pattern.png);
+    background-attachment: fixed;  /*Para que el fondo se quede quieto*/
+}
+.clearfix{
+    float: none;
+    clear: both;
+}
+
+/* Header */
+
+header{
+    display: block;
+    width: 100%;
+    height: 90px;
+    background: rgba(53, 103, 164, 0.75);
+    position: fixed; 
+    text-transform: uppercase;  /*PAra colocar todo en mayus*/
+} 
+
+header ul{
+    display: block;
+    height: inherit;  /*Heredado*/
+    margin: 0px auto;
+    text-align: center;
+}
+
+header ul li{
+    display: inline-block;  /*Para que se ponga uno al lado del otro*/
+    margin: 0px auto;
+    text-align: center;
+    line-height: 90px;
+}
+
+header a{
+    display: block;
+    padding-right: 20px;
+    padding-left: 20px;
+    height: inherit;
+    text-decoration: none;  
+    color: white;
+    transition: all 300px;
+    cursor: default;
+}
+
+header a:hover,
+.actived{   /*Para cuando pase por encima con el mouse */
+    background: rgba(0, 0, 0, 0.8);
+    cursor: pointer;
+}
+
+#logo{
+    font-family: "finger";
+    font-size: 20px;
+}
+
+#logo{
+    transition: color 1000ms, transform 1000ms;
+}
+
+header #logo a:hover{
+    background: transparent;
+    color: black;
+    transform: scale(1.5, 1.5);
+}
+
+/* Contenedor principal*/
+
+#content {
+    min-height: 600px;
+    width: 75%;
+    height: auto;
+    margin: 0px auto;
+    box-shadow: 0px 0px 40px black;
+    border-left: 1px solid #b7b7b7;
+    background: rgba(255,255,255,0.8);
+    padding-top: 120px;
+}
+
+/* Pie de pagina */
+
+footer{
+    width: 75%;
+    margin: 0px auto;
+    margin-top: 7px;
+    margin-bottom: 7px;
+    color: rgba(0, 0, 0, 0.5);
+}
+
+/* About */
+
+#title{
+    width: 70%;
+    margin: 0px auto;
+    text-align: center;
+    margin-bottom: 80px;
+}
+#title h1{
+    font-family: "finger";
+    font-size: 30px;
+    margin-bottom: 10px;
+}
+#title h3{
+    font-size: 25px;
+    color: gray;
+    margin-bottom: 5px;
+    margin-top: 5px;
+}
+article{
+    margin-left: 50px;
+    margin-right: 50px;
+}
+.about hr{
+    margin-bottom: 15px;
+    margin-top: 3px;
+}
+.about h3{
+    font-size: 30px;
+}
+.about p{
+    text-align: justify;
+}
+ 
+
+/* Seccion con formulario */
+
+.container{
+    padding: 50px;
+    padding-top: 10px;
+}
+
+.container .image{
+    float: left;
+    width: 50%;
+}
+.container .image img{
+    width: 100%;
+}
+
+.container .data{
+    float: left;
+    width: 40%;
+    margin-left: 30px;
+}
+.container h2{
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 10px;
+    margin-bottom: 15px;
+}
+
+form{
+    width: 80%;
+}
+
+form label{
+    display: block;
+    width: 100%;
+    margin-top: 10px;
+    margin-bottom: 2px;
+}
+
+form input[type="text"],
+form input[type="number"],
+form input[type="email"],
+form textarea{
+    width: 40%;
+    padding: 5px;
+}
+
+form button,
+form input[type="submit"],
+.button-edit,
+.button-delete{
+    font-size: 15px;
+    padding: 10px;
+    width: 42%;
+    display: block;
+    margin-top: 15px;
+    color: white;
+    background: rgba(53, 103, 164, 0.8);
+    border: 1px solid rgb(0, 0, 0, 0.8);
+    cursor: pointer;
+}
+.button-edit{
+  background: rgb(112, 255, 115);
+  color: black;
+  text-decoration: none;
+  border: none;
+  text-align: center;
+}
+.button-delete{
+    background: rgb(242, 39, 151); 
+    text-decoration: none; 
+    color: black; 
+    border: none;
+    text-align: center;
+}
+
+form button:hover,
+form input[type="submit"]:hover{
+    background: rgba(53, 103, 164, 1);
+    color: black;
+}
+
+form input[disabled]{
+    opacity: 0.5;
+    background: rgba(53, 103, 164, 1);
+    color: black;
+    cursor: default;
+}
+.form_error{
+    font-size: 18px;
+    padding: 5px;
+    color: red;
+    margin-left: 5px;
+}
+
+.message{
+    width: 32%;
+    padding: 5px;
+
+}
+
+.success{
+  
+    color: rgb(19, 222, 16);
+}
+.success a{
+    color: white;
+}
+
+.failed{
+    color: red;
+}
+
+/*form input[type="file"]{
+    font-size: 15px;
+    padding: 10px;
+    width: 42%;
+    display: block;
+    margin-top: 15px;
+    color: white;
+    background: rgba(53, 103, 164, 0.8);
+    border: 1px solid rgb(0, 0, 0, 0.8);
+    cursor: pointer;
+}*/
+
+/* Pagina de proyectos */
+
+.project{
+    list-style: none;
+    display: block;
+    float: left;
+    width: 28%;
+    text-align: center;
+    margin-left: 20px;
+    margin-right: 20px;
+    margin-bottom: 20px;
+}
+
+.project .image{
+    width: 100%;
+    height: 120px;
+    overflow: hidden;
+}
+
+.project img{
+    width: 100%;
+}
+
+.project a{
+    text-decoration: none;
+    color: black;
+}
