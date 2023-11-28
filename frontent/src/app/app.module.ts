@@ -13,9 +13,9 @@ import { ErrorComponent } from './components/error/error.component';
 import { DetailComponent } from './components/detail/detail.component';
 import { EditComponent } from './components/edit/edit.component';
 import { SliderComponent } from './components/slider/slider.component';
-import { ResaltadoDirective } from './resaltado.directive';
 
-// import * as $ from 'jquery';
+import * as $ from 'jquery';
+import { ResaltadoDirective } from './resaltado.directive';
 
 
 @NgModule({
@@ -25,11 +25,11 @@ import { ResaltadoDirective } from './resaltado.directive';
     ProjectsComponent,
     CreateComponent,
     ContactComponent,
-    ErrorComponent,
     DetailComponent,
+    ErrorComponent,
     EditComponent,
     SliderComponent,
-    ResaltadoDirective
+    ResaltadoDirective,
   ],
   imports: [
     BrowserModule,

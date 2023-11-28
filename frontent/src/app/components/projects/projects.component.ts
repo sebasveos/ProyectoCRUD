@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { Project } from '../../models/project';
 import { ProjectService } from '../../services/project.service';
 import { Global } from '../../services/global';
@@ -9,31 +9,29 @@ import { Global } from '../../services/global';
   styleUrls: ['./projects.component.css'],
   providers: [ProjectService]
 })
-export class ProjectsComponent implements OnInit {
-  public projects: Project[];
+export class ProjectsComponent {
+  public projects: Project[] = [];
   public url: string;
 
   constructor(
-  	private _projectService: ProjectService
+    private _projectService : ProjectService
   ){
-  	this.url = Global.url;
+    this.url = Global.url;
   }
 
   ngOnInit(){
-  	this.getProjects();
+    this.getProjects();
   }
-
   getProjects(){
-  	this._projectService.getProjects().subscribe(
-  		response => {
-  			if(response.projects){
-  				this.projects = response.projects;
-  			}
-  		},
-  		error => {
-  			console.log(<any>error);
-  		}
-  	);
+    this._projectService.getProjects().subscribe(
+      response => {
+        if(response.projects){
+          this.projects = response.projects;
+        }
+      },
+      error => {
+        console.log(<any>error);
+      }
+    )
   }
-
 }

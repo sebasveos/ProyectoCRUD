@@ -16,48 +16,48 @@ export class DetailComponent implements OnInit {
   public confirm: boolean;
 
   constructor(
-  	private _projectService: ProjectService,
-  	private _router: Router,
-  	private _route: ActivatedRoute
-  ){
-  	this.url = Global.url;
+    private _projectService: ProjectService,
+    private _router: Router,
+    private _route: ActivatedRoute
+  ) {
+    this.url = Global.url;
+    this.project = new Project('', '', '', '', 0, '', '');
     this.confirm = false;
   }
 
-  ngOnInit(){
-  	this._route.params.subscribe(params => {
-  		let id = params.id;
+  ngOnInit() {
+    this._route.params.subscribe(params => {
+      let id = params['id'];
 
-  		this.getProject(id);
-  	});
+      this.getProject(id);
+    });
+  }
+  getProject(id: any) {
+    this._projectService.getProject(id).subscribe(
+      response => {
+        this.project = response.project;
+      },
+      error => {
+        console.log(<any>error);
+      }
+    )
   }
 
-  getProject(id){
-  	this._projectService.getProject(id).subscribe(
-  		response => {
-  			this.project = response.project;
-  		},
-  		error => {
-  			console.log(<any>error);
-  		}
-  	)
-  }
-
-  setConfirm(confirm){
+  
+  setConfirm(confirm:any){
     this.confirm = confirm;
   }
 
-  deleteProject(id){
-  	this._projectService.deleteProject(id).subscribe(
-  		response => {
-  			if(response.project){
-  				this._router.navigate(['/proyectos']);
-  			}
-  		},
-  		error => {
-  			console.log(<any>error);
-  		}
-  	);
+  deleteProject(id: any) {
+    this._projectService.deleteProject(id).subscribe(
+      response => {
+        if(response.project){
+          this._router.navigate(['/proyectos']);  //La url que esta ubicada en el app.routing
+        }
+      },
+      error => {
+        console.log(<any>error);
+      }
+    )
   }
-
 }
