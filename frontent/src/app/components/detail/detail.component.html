@@ -7,15 +7,12 @@
 </div> -->
 <div class="container" *ngIf="project">
 
-	<div class="image" *ngIf="project.image">
-		<img src="{{url+'get-image/'+project.image}}" />
-	</div>
+	
 	<div class="data">
 		<div>
 			<h1>{{project.name}}</h1>
-			<h3>{{project.description}}</h3>
-			<p>{{project.category}}</p>
-			<p>{{project.langs}}</p>
+			<h3>{{project.lastName}}</h3>
+			<p>{{project.age}}</p>
 		</div>
 		<p *ngIf="confirm == false">
 			<a [routerLink]="['/editar-proyecto', project._id]" class="button-edit">Editar</a>

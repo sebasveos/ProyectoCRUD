@@ -24,7 +24,7 @@ export class CreateComponent implements OnInit {
 	) {
 		this.url = Global.url;
 		this.title = "Crear proyecto";
-		this.project = new Project('', '', '', '', 2019, '', '');
+		this.project = new Project('', '', '',0);
 	}
 
 	ngOnInit() {
@@ -35,27 +35,9 @@ export class CreateComponent implements OnInit {
 		// Guardar datos básicos
 		this._projectService.saveProject(this.project).subscribe(
 			response => {
-				if (response.project) {
-
-					// Subir la imagen
-					if (this.filesToUpload) {
-						this._uploadService.makeFileRequest(Global.url + "upload-image/" + response.project._id, [], this.filesToUpload, 'image')
-							.then((result: any) => {
-								this.save_project = response.project;
-								console.log(this.save_project);
-
-								this.status = 'success';
-								form.reset();
-							});
-					} else {
-						this.save_project = response.project;
+				this.save_project = response.project;
 						this.status = 'success';
 						form.reset();
-					}
-
-				} else {
-					this.status = 'failed';
-				}
 			},
 			error => {
 				console.log(<any>error);

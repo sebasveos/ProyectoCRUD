@@ -28,7 +28,7 @@ export class EditComponent {
 	){
     this.url = Global.url;
 		this.title = "Editar proyecto";
-		this.project = new Project('','','','',2019,'','');
+		this.project = new Project('','','',0);
 	}
 
 	
@@ -55,27 +55,10 @@ export class EditComponent {
 		// Guardar datos básicos
 		this._projectService.editProject(this.project).subscribe(
 			response => {
-				if (response.project) {
-
-					// Subir la imagen
-					if (this.filesToUpload) {
-						this._uploadService.makeFileRequest(Global.url + "upload-image/" + response.project._id, [], this.filesToUpload, 'image')
-							.then((result: any) => {
-								this.save_project = response.project;
+				this.save_project = response.project;
 								console.log(this.save_project);
 
 								this.status = 'success';
-								
-							});
-					} else {
-						this.save_project = response.project;
-						this.status = 'success';
-				
-					}
-
-				} else {
-					this.status = 'failed';
-				}
 			},
 			error => {
 				console.log(<any>error);

@@ -24,7 +24,7 @@ const storage = multer.diskStorage({
   },
 });
 var mul_upload = multer({dest: './uploads',storage});
-*/var crypto = require('crypto');
+*//*var crypto = require('crypto');
 const multer = require('multer');
 
 const storage = multer.diskStorage({
@@ -48,15 +48,14 @@ const mul_upload = multer({dest: './uploads',storage});
 /*var multipart = require('connect-multiparty');
 var multipartMiddleware = multipart({uploadDir: './uploads'})*/
 
-router.get('/home', ProjectController.home);
-router.get('/test', ProjectController.test);
+
+
 router.post('/saveProject', ProjectController.saveProject); //Para guardar un objeto desde el body de Postman
 router.get('/getProject/:id?', ProjectController.getProject);  //Para obtener algo de la Base de datos
 router.get('/getProjects', ProjectController.getProjects); //Para mostrar la lista de objetos
 router.put('/updateProject/:id?', ProjectController.updateProject); //Para actualizar un objeto segun la ID
 router.delete('/deleteProject/:id?', ProjectController.deleteProject); //Para eliminar un proyecto por la ID
-router.post('/upload-image/:id', [mul_upload.single('image')], ProjectController.uploadImage);
-router.get('/get-image/:image', ProjectController.getImageFile);
+
 //router.get("/detalle-proyecto/:id",projectController.detailProject);
 
 //router.post('/uploadImage/:id', multipartMiddleware, ProjectController.uploadImage);

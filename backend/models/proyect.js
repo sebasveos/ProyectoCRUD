@@ -5,11 +5,8 @@ var Schema = mongoose.Schema;
 
 var ProjectSchema = Schema({
     name: String,
-    description: String,
-    category: String,
-    year: Number,
-    langs: String,
-    image: String
+    lastName: String,
+    age: Number,
 });
 
 module.exports = mongoose.model('Project', ProjectSchema); // Modelo de inicio

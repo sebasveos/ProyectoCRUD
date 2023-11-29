@@ -21,7 +21,7 @@ export class DetailComponent implements OnInit {
     private _route: ActivatedRoute
   ) {
     this.url = Global.url;
-    this.project = new Project('', '', '', '', 0, '', '');
+    this.project = new Project('', '', '',0);
     this.confirm = false;
   }
 
