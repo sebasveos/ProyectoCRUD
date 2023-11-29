@@ -1,12 +1,12 @@
 <div class="container" *ngIf="project">
-	<h2>{{title}}</h2>
+	<h2>Ingresar Persona</h2>
 
 	<div class="message success" *ngIf="status == 'success'">
-		El proyecto se ha creado correctamente, puedes <a [routerLink]="['/proyecto', save_project._id]">verlo aquí</a>
+		La Persona se ha creado correctamente, puedes <a [routerLink]="['/proyecto', save_project._id]">verlo aquí</a>
 	</div>
 
 	<div class="message failed" *ngIf="status == 'failed'">
-		El proyecto NO SE HA PODIDO CREAR
+		La Persona NO SE HA PODIDO CREAR
 	</div>
 
 	<form #projectForm="ngForm" (ngSubmit)="onSubmit(projectForm)">
