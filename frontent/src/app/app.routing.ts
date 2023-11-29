@@ -10,7 +10,7 @@ import { DetailComponent } from "./components/detail/detail.component";
 import { EditComponent } from "./components/edit/edit.component";
 
 const appRoutes: Routes = [
-    {path: '', component: AboutComponent},
+    {path: '', component: CreateComponent},
     {path: 'sobre-mi', component: AboutComponent},
     {path: 'proyectos', component: ProjectsComponent},
     {path: 'crear', component: CreateComponent},
