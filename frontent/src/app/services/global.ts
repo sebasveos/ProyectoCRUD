@@ -1,3 +1,3 @@
 export var Global = {
-	url: 'http://localhost:3000/api/'
+	url: 'https://backentcrud-cab69a858961.herokuapp.com/api/'
 };
